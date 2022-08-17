@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- Custom Theme files -->
+	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Eshop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--webfont-->
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+	<!-- //for bootstrap working -->
+	<!-- cart -->
+	<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+	<!-- cart -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+</head>
+<body>
+	<!-- header-section-starts -->
+
+	<	<!-- header-section-ends -->
+	<div class="inner-banner">
+		<div class="container">
+			<div class="banner-top inner-head">
+				<nav class="navbar navbar-default" role="navigation">
+	    <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+	        </button>
+				<div class="logo">
+					<h1><a href="index.html"><span>E</span> -Shop</a></h1>
+				</div>
+	    </div>
+	    <!--/.navbar-header-->
+	
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	        <ul class="nav navbar-nav">
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'orders' %}">orders</a></li>
+					<li><a href="{% url 'cart' %}">cart</a></li>
+				
+	        </ul>
+	    </div>
+	    <!--/.navbar-collapse-->
+	</nav>
+	<!--/.navbar-->
+</div>
+	</div>
+		</div>
+		<!-- content-section-starts -->
+	<div class="content">
+	<div class="container">
+		<div class="login-page">
+			  
+                
+                <div class="clearfix"></div>
+			   </div>
+			   <div class="account_grid">
+			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+			  	 <h2>NEW CUSTOMERS</h2>
+				
+				 <a class="acount-btn" href="{% url 'register' %}">Create an Account</a>
+			   </div>
+			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+			  	<h3>Login Here</h3>
+				
+				<form method='post'>
+					{% csrf_token %}
+				  <div>
+					<span>Email Address<label>*</label></span>
+					<input type="text" name='email'> 
+				  </div>
+				  <div>
+					<span>Password<label>*</label></span>
+					<input type="password" name='password'> 
+				  </div>
+				 
+				  <input type="submit" value="Login">
+			    </form>
+			   </div>	
+			   <div class="clearfix"> </div>
+			 </div>
+		   </div>
+</div>
+		
+		</div>
+	
+</body>
+</html>

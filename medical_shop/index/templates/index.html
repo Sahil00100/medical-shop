@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- Custom Theme files -->
+	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<!-- Custom Theme files -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Eshop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--webfont-->
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+	<!-- //for bootstrap working -->
+	<!-- cart -->
+	<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+	<!-- cart -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+	<style>
+    
+	body {
+    margin: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5385;
+    color: #333;
+    text-align: left;
+
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .1875rem
+}
+
+.card-img-actions {
+    position: relative
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    text-align: center
+}
+
+.card-img {
+    width: 350px
+}
+
+.star {
+    color: red
+}
+
+.bg-cart {
+    background-color: orange;
+    color: #fff
+}
+
+.bg-cart:hover {
+    color: #fff
+}
+
+.bg-buy {
+    background-color: green;
+    color: #fff;
+    padding-right: 29px
+}
+
+.bg-buy:hover {
+    color: #fff
+}
+
+a {
+    text-decoration: none !important
+}
+	   
+	   </style>
+</head>
+
+
+<body>
+	<!-- header-section-starts -->
+
+	<!-- header-section-ends -->
+<section class="section-1">
+	
+	<div class="banner">
+
+
+		<div class="container">
+
+			<div class="container">
+
+				<div class="header">
+					<div class="header-top-strip">
+						<div class="container">
+							<div class="header-top-left" style="float: right;">
+								<ul>
+									<li><a style="color: black;" href="{% url 'login' %}"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
+									<li><a style="color: black;" href="{% url 'register' %}"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a>
+										{% if user.is_authenticated %}
+										<li><a style="color: black;" href="{% url 'logout' %}">Log-out</a>
+									</li>
+									{% endif %}
+								</ul>
+							</div>
+			
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+
+					
+
+
+						<div class="logo">
+							<h1><a href="{% url 'index'%}"><span>D</span> -Shop</a></h1>
+						</div>
+					</div>
+					<!--/.navbar-header-->
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="{% url 'index'%}">Home</a></li>
+							<li class="dropdown">
+							<li><a href="{% url 'orders'%}">Orders</a></li>
+							<li><a href="{% url 'cart'%}">Cart</a></li>
+				
+						</ul>
+					</div>
+					<!--/.navbar-collapse-->
+				</nav>
+
+
+				<div class="banner-bottom">
+
+					<div class="banner-bottom-right">
+						<div class="callbacks_container">
+							<ul class="rslides" id="slider4">
+								<li>
+									<div class="banner-info">
+										<h3>Drug Pharmacy</h3>
+										<p>Shop For Your Drugs...</p>
+									</div>
+								</li>
+								<li style="margin-left: 180px;">
+									
+									<form action="" method='post'>
+										{% csrf_token %}
+										<input required name='search' type="text" placeholder="Search Products" style="height: 40px; text-align: center; background: white; filter: opacity(0.5); border: 1.4px solid black; color: black; font-size: 15px; font-weight: bold; width: 250px;">
+										<button class="btn btn-primary" style="margin-bottom: 4px; height: 40px;">Search</button>
+									</form>
+								</li>
+
+							</ul>
+						</div>
+						<!--banner-->
+
+					</div>
+			
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</section>
+	<!-- content-section-starts-here -->
+
+
+
+	<div class="container">
+		<div class="main-content">
+
+			<div class="products-grid">
+				<header>
+					<h3 class="head text-center" style="margin-top:100px;">Best Sellers</h3>
+				</header>
+
+			</div>
+		</div>
+	</div>
+	<div class="container d-flex justify-content-center mt-50 mb-50">
+		<div class="row">
+			{% for product in latest %}
+			<div class="col-md-4 mt-2">
+				<div class="card">
+					<div class="card-body">
+						<div class="card-img-actions"> <img src="{{product.photo1.url}}" class="card-img img-fluid" width="96" height="350" alt=""> </div>
+					</div>
+					<div class="card-body bg-light text-center">
+						<div class="mb-2">
+							<h6 class="font-weight-semibold mb-2"> <a href="{% url 'product' product.id %}" class="text-default mb-2" data-abc="true"><h4>{{product.name}}</h4></a> </h6> <a href="#" class="text-muted" data-abc="true"></a>
+						</div>
+						<h3 class="mb-0 font-weight-semibold">${{product.price}}</h3>
+						<div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
+						<div class="text-muted mb-3"></div> <a class="btn bg-cart" href="{% url 'cartadd' product.id %}">Add to cart</a> 
+					</div>
+				</div>
+			</div>{% endfor %}
+		  
+		</div>
+	</div>
+	
+	<center>
+	
+			<a href="{% url 'search'%}">
+				<button
+					style="padding: 10px 10px 10px 10px; margin-top: 50px; background-color: maroon; color: white; border: none; border-radius: 5px; font-size: 15px;">
+					More Products
+				</button>
+			</a>
+
+	</center>
+
+	<!-- content-section-ends-here -->
+
+	<br>
+	<br>
+	<br>
+</body>
+
+</html>
